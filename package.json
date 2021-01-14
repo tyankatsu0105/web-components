@@ -1,0 +1,37 @@
+{
+  "name": "@tyankatsu0105/web-components",
+  "version": "0.0.0",
+  "description": "Sample Web Components",
+  "homepage": "https://github.com/tyankatsu0105/web-components#readme",
+  "bugs": {
+    "url": "https://github.com/tyankatsu0105/web-components/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tyankatsu0105/web-components.git"
+  },
+  "license": "MIT",
+  "author": "tyankatsu <frips.ryilsufupe+dev@gmail.com> (https://tyankatsu.netlify.com/)",
+  "main": "dist/index.cjs.js",
+  "unpkg": "dist/web-components/web-components.esm.js",
+  "module": "dist/custom-elements/index.js",
+  "types": "dist/custom-elements/index.d.ts",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "generate": "stencil generate",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
+  },
+  "dependencies": {
+    "@stencil/core": "2.3.0"
+  },
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs"
+}
