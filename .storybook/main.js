@@ -10,7 +10,8 @@ module.exports = {
   ],
   addons: [
     "@storybook/addon-links",
-    "@storybook/addon-essentials"
+    "@storybook/addon-essentials",
+    "@storybook/addon-notes",
   ],
   /**
    * @param {import('webpack').Configuration & import('webpack-dev-server').Configuration} config

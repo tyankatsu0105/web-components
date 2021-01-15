@@ -3,7 +3,9 @@ import notes from './readme.md';
 
 export default {
   title: 'my-components',
-  notes
+  parameters: {
+    notes
+  },
 };
 
 export const Template = () => {
