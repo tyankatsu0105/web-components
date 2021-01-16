@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `users`  | --        |             | `User[]` | `undefined` |
+| Property | Attribute | Description | Type               | Default     |
+| -------- | --------- | ----------- | ------------------ | ----------- |
+| `users`  | `users`   |             | `User[] \| string` | `undefined` |
 
 
 ----------------------------------------------

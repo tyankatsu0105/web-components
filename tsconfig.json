@@ -17,7 +17,8 @@
     "jsxFactory": "h",
     "baseUrl": ".",
     "paths": {
-      "~components-type": ["src/components.d.ts"]
+      "~components-type": ["src/components.d.ts"],
+      "~storybook-utils": ["src/.storybook/utils/index.ts"],
     }
   },
   "include": [

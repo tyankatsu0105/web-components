@@ -6,7 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Types } from "./utils";
-import { User } from "./components/tyankatsu-user-list/tyankatsu-user-list";
+import { User } from "./components/tyankatsu-user/tyankatsu-user";
+import { User as User1 } from "./components/tyankatsu-user-list/tyankatsu-user-list";
 export namespace Components {
     interface MyComponent {
         /**
@@ -23,6 +24,9 @@ export namespace Components {
         "middle": string;
         "users": {name: string}[] | string;
     }
+    interface TyankatsuUser {
+        "user": Types.WithString<User>;
+    }
     interface TyankatsuUserList {
         "users": Types.WithString<User[]>;
     }
@@ -34,6 +38,12 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLTyankatsuUserElement extends Components.TyankatsuUser, HTMLStencilElement {
+    }
+    var HTMLTyankatsuUserElement: {
+        prototype: HTMLTyankatsuUserElement;
+        new (): HTMLTyankatsuUserElement;
+    };
     interface HTMLTyankatsuUserListElement extends Components.TyankatsuUserList, HTMLStencilElement {
     }
     var HTMLTyankatsuUserListElement: {
@@ -42,6 +52,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "tyankatsu-user": HTMLTyankatsuUserElement;
         "tyankatsu-user-list": HTMLTyankatsuUserListElement;
     }
 }
@@ -61,11 +72,15 @@ declare namespace LocalJSX {
         "middle"?: string;
         "users"?: {name: string}[] | string;
     }
+    interface TyankatsuUser {
+        "user"?: Types.WithString<User>;
+    }
     interface TyankatsuUserList {
         "users"?: Types.WithString<User[]>;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "tyankatsu-user": TyankatsuUser;
         "tyankatsu-user-list": TyankatsuUserList;
     }
 }
@@ -74,6 +89,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "tyankatsu-user": LocalJSX.TyankatsuUser & JSXBase.HTMLAttributes<HTMLTyankatsuUserElement>;
             "tyankatsu-user-list": LocalJSX.TyankatsuUserList & JSXBase.HTMLAttributes<HTMLTyankatsuUserListElement>;
         }
     }

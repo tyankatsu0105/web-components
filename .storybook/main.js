@@ -17,6 +17,10 @@ module.exports = {
    * @param {import('webpack').Configuration & import('webpack-dev-server').Configuration} config
    */
   webpackFinal: async (config) => {
+    config.resolve.alias = {
+      '~storybook-utils': path.resolve(__dirname, '../src/.storybook/utils/index.ts')
+    };
+
     return config;
   },
 };
