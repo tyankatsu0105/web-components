@@ -1,5 +1,5 @@
 import { Component, h, Prop, State, Watch,  } from '@stencil/core';
-import {Types} from "../../utils";
+import {Types, Parse} from "../../utils";
 
 type Blood =  'A' | 'B' | 'O' | 'AB';
 
@@ -23,12 +23,8 @@ export class TyankatsuUserList {
 
   @Watch('users')
   parseUsers(newValue: Types.WithString<User[]>) {
-    if (typeof newValue === 'string') {
-      this._users = JSON.parse(newValue);
-   }
-   else {
-     this._users = newValue;
-   }
+    const value = Parse.parseValue(newValue)
+    this._users = value
   }
 
   componentWillLoad() {

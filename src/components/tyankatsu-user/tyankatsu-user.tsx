@@ -1,5 +1,5 @@
 import { Component, h, Prop, State, Watch,  } from '@stencil/core';
-import {Types} from "../../utils";
+import {Types, Parse} from "../../utils";
 
 type Blood =  'A' | 'B' | 'O' | 'AB';
 
@@ -8,6 +8,8 @@ export type User = {
   age: number
   blood: Blood
 }
+
+
 
 @Component({
   tag: 'tyankatsu-user',
@@ -22,17 +24,13 @@ export class TyankatsuUserList {
   @State() _user: User
 
   @Watch('user')
-  parseUsers(newValue: Types.WithString<User>) {
-    if (typeof newValue === 'string') {
-      this._user = JSON.parse(newValue);
-   }
-   else {
-     this._user = newValue;
-   }
+  parseUser(newValue: Types.WithString<User>) {
+    const value = Parse.parseValue(newValue)
+    this._user = value
   }
 
   componentWillLoad() {
-    this.parseUsers(this.user)
+    this.parseUser(this.user)
   }
 
   render() {
