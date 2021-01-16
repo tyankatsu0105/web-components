@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ArrayProp, User } from "./components/tyankatsu-user-list/tyankatsu-user-list";
 export namespace Components {
     interface MyComponent {
         /**
@@ -21,6 +22,9 @@ export namespace Components {
         "middle": string;
         "users": {name: string}[] | string;
     }
+    interface TyankatsuUserList {
+        "users": ArrayProp<User[]>;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -29,8 +33,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLTyankatsuUserListElement extends Components.TyankatsuUserList, HTMLStencilElement {
+    }
+    var HTMLTyankatsuUserListElement: {
+        prototype: HTMLTyankatsuUserListElement;
+        new (): HTMLTyankatsuUserListElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "tyankatsu-user-list": HTMLTyankatsuUserListElement;
     }
 }
 declare namespace LocalJSX {
@@ -49,8 +60,12 @@ declare namespace LocalJSX {
         "middle"?: string;
         "users"?: {name: string}[] | string;
     }
+    interface TyankatsuUserList {
+        "users"?: ArrayProp<User[]>;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "tyankatsu-user-list": TyankatsuUserList;
     }
 }
 export { LocalJSX as JSX };
@@ -58,6 +73,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "tyankatsu-user-list": LocalJSX.TyankatsuUserList & JSXBase.HTMLAttributes<HTMLTyankatsuUserListElement>;
         }
     }
 }
