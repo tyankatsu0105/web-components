@@ -3,10 +3,9 @@ export const parseValue = <Value extends unknown>(newValue: Value) => {
 
   if (typeof newValue === 'string') {
     parsedValue = JSON.parse(newValue);
-  }
-  else {
+  } else {
     parsedValue = newValue as Exclude<Value, string>;
   }
 
-  return parsedValue
-}
+  return parsedValue;
+};

@@ -16,7 +16,7 @@ export const Template = () => {
         name: 'John',
         age: 100,
         blood: 'AB',
-      }
+      },
     ],
   };
 

@@ -1,15 +1,13 @@
-import { Component, h, Prop, State, Watch,  } from '@stencil/core';
-import {Types, Parse} from "../../utils";
+import { Component, h, Prop, State, Watch } from '@stencil/core';
+import { Types, Parse } from '../../utils';
 
-type Blood =  'A' | 'B' | 'O' | 'AB';
+type Blood = 'A' | 'B' | 'O' | 'AB';
 
 export type User = {
-  name: string
-  age: number
-  blood: Blood
-}
-
-
+  name: string;
+  age: number;
+  blood: Blood;
+};
 
 @Component({
   tag: 'tyankatsu-user',
@@ -20,17 +18,17 @@ export class TyankatsuUserList {
   /**
    * Data of user
    */
-  @Prop() user: Types.WithString<User>
-  @State() _user: User
+  @Prop() user: Types.WithString<User>;
+  @State() _user: User;
 
   @Watch('user')
   parseUser(newValue: Types.WithString<User>) {
-    const value = Parse.parseValue(newValue)
-    this._user = value
+    const value = Parse.parseValue(newValue);
+    this._user = value;
   }
 
   componentWillLoad() {
-    this.parseUser(this.user)
+    this.parseUser(this.user);
   }
 
   render() {
@@ -45,4 +43,3 @@ export class TyankatsuUserList {
     );
   }
 }
-

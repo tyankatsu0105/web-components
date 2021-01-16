@@ -1,22 +1,24 @@
-import {Components} from "~components-type";
+import { Components } from '~components-type';
 import notes from './readme.md';
 
 export default {
   title: 'my-component',
   parameters: {
-    notes
+    notes,
   },
 };
 
-const embedArgs = (args: {[key: string]: any}) => Object.entries(args).map(([key, value]) => `${key}=${JSON.stringify(value)}`).join(' ')
-
+const embedArgs = (args: { [key: string]: any }) =>
+  Object.entries(args)
+    .map(([key, value]) => `${key}=${JSON.stringify(value)}`)
+    .join(' ');
 
 export const Template = () => {
   const args: Components.MyComponent = {
     first: 'first-value',
     last: 'last',
     middle: 'middle',
-  }
+  };
 
-  return `<my-component ${embedArgs(args)} ></my-component>`
+  return `<my-component ${embedArgs(args)} ></my-component>`;
 };

@@ -1,1 +1,1 @@
-export type WithString<T> = T | string
+export type WithString<T> = T | string;

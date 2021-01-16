@@ -1,9 +1,6 @@
 # tyankatsu-user-list
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -11,7 +8,6 @@
 | -------- | --------- | ----------------- | ------------------ | ----------- |
 | `users`  | `users`   | List data of user | `User[] \| string` | `undefined` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
