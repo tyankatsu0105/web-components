@@ -5,7 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ArrayProp, User } from "./components/tyankatsu-user-list/tyankatsu-user-list";
+import { Types } from "./utils";
+import { User } from "./components/tyankatsu-user-list/tyankatsu-user-list";
 export namespace Components {
     interface MyComponent {
         /**
@@ -23,7 +24,7 @@ export namespace Components {
         "users": {name: string}[] | string;
     }
     interface TyankatsuUserList {
-        "users": ArrayProp<User[]>;
+        "users": Types.WithString<User[]>;
     }
 }
 declare global {
@@ -61,7 +62,7 @@ declare namespace LocalJSX {
         "users"?: {name: string}[] | string;
     }
     interface TyankatsuUserList {
-        "users"?: ArrayProp<User[]>;
+        "users"?: Types.WithString<User[]>;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;

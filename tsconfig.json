@@ -17,7 +17,7 @@
     "jsxFactory": "h",
     "baseUrl": ".",
     "paths": {
-      "~components-type": ["src/components.d.ts"],
+      "~components-type": ["src/components.d.ts"]
     }
   },
   "include": [

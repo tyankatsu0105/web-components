@@ -1,4 +1,5 @@
 import { Component, h, Prop, State, Watch,  } from '@stencil/core';
+import {Types} from "../../utils";
 
 type Blood =  'A' | 'B' | 'O' | 'AB';
 
@@ -8,19 +9,17 @@ export type User = {
   blood: Blood
 }
 
-export type ArrayProp<T> = T | string
-
 @Component({
   tag: 'tyankatsu-user-list',
   styleUrl: 'tyankatsu-user-list.css',
   shadow: true,
 })
 export class TyankatsuUserList {
-  @Prop() users: ArrayProp<User[]>
+  @Prop() users: Types.WithString<User[]>
   @State() _users: User[]
 
   @Watch('users')
-  parseUsers(newValue: ArrayProp<User[]>) {
+  parseUsers(newValue: Types.WithString<User[]>) {
     if (typeof newValue === 'string') {
       this._users = JSON.parse(newValue);
    }
@@ -34,7 +33,6 @@ export class TyankatsuUserList {
   }
 
   render() {
-
     return (
       <ul>
         {this._users.map(user => <li>
