@@ -1,6 +1,6 @@
 # Web Components
 
-My sample of Web Components with StencilJS
+My sample of Web Components with [Stencil](https://stenciljs.com/)
 
 # Usage
 ```bash
