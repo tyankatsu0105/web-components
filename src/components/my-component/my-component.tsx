@@ -24,6 +24,9 @@ export class MyComponent {
    */
   @Prop() last: string;
 
+  /**
+   * List data of user
+   */
   @Prop() users: {name: string}[] | string;
 
   @Watch('users')

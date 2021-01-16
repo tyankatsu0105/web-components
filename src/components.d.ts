@@ -22,12 +22,21 @@ export namespace Components {
           * The middle name
          */
         "middle": string;
+        /**
+          * List data of user
+         */
         "users": {name: string}[] | string;
     }
     interface TyankatsuUser {
+        /**
+          * Data of user
+         */
         "user": Types.WithString<User>;
     }
     interface TyankatsuUserList {
+        /**
+          * List data of user
+         */
         "users": Types.WithString<User[]>;
     }
 }
@@ -70,12 +79,21 @@ declare namespace LocalJSX {
           * The middle name
          */
         "middle"?: string;
+        /**
+          * List data of user
+         */
         "users"?: {name: string}[] | string;
     }
     interface TyankatsuUser {
+        /**
+          * Data of user
+         */
         "user"?: Types.WithString<User>;
     }
     interface TyankatsuUserList {
+        /**
+          * List data of user
+         */
         "users"?: Types.WithString<User[]>;
     }
     interface IntrinsicElements {

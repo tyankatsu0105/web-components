@@ -15,6 +15,9 @@ export type User = {
   shadow: true,
 })
 export class TyankatsuUserList {
+  /**
+   * List data of user
+   */
   @Prop() users: Types.WithString<User[]>
   @State() _users: User[]
 
