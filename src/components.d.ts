@@ -22,10 +22,6 @@ export namespace Components {
           * The middle name
          */
         "middle": string;
-        /**
-          * List data of user
-         */
-        "users": {name: string}[] | string;
     }
     interface TyankatsuUser {
         /**
@@ -79,10 +75,6 @@ declare namespace LocalJSX {
           * The middle name
          */
         "middle"?: string;
-        /**
-          * List data of user
-         */
-        "users"?: {name: string}[] | string;
     }
     interface TyankatsuUser {
         /**

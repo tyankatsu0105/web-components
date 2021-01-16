@@ -16,11 +16,6 @@ export const Template = () => {
     first: 'first-value',
     last: 'last',
     middle: 'middle',
-    users: [
-      {
-        name: 'john'
-      }
-    ]
   }
 
   return `<my-component ${embedArgs(args)} ></my-component>`

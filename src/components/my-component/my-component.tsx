@@ -1,4 +1,4 @@
-import { Component, Prop, h, Watch } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 import { format } from '../../utils/utils';
 
 @Component({
@@ -7,7 +7,6 @@ import { format } from '../../utils/utils';
   shadow: true,
 })
 export class MyComponent {
-  private _arrayData: {name: string}[];
 
   /**
    * The first name
@@ -24,24 +23,8 @@ export class MyComponent {
    */
   @Prop() last: string;
 
-  /**
-   * List data of user
-   */
-  @Prop() users: {name: string}[] | string;
 
-  @Watch('users')
-  arrayDataWatcher(newValue: {name: string}[] | string) {
-    if (typeof newValue === 'string') {
-       this._arrayData = JSON.parse(newValue);
-    }
-    else {
-      this._arrayData = newValue;
-    }
-  }
 
-  componentWillLoad() {
-    this.arrayDataWatcher(this.users);
-  }
 
   private getText(): string {
     return format(this.first, this.middle, this.last);
@@ -51,7 +34,6 @@ export class MyComponent {
   render() {
     return <div>
       <div>Hello, World! I'm {this.getText()}</div>
-      {this._arrayData.map(user => <div>{user.name}</div>)}
     </div>
   }
 }
