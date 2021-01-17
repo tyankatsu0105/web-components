@@ -1,5 +1,10 @@
 import { Components } from '~components-type';
+import { embedArgs } from '~storybook-utils';
 import notes from './readme.md';
+
+// =========================================
+// setup
+// =========================================
 
 export default {
   title: 'my-component',
@@ -8,17 +13,15 @@ export default {
   },
 };
 
-const embedArgs = (args: { [key: string]: any }) =>
-  Object.entries(args)
-    .map(([key, value]) => `${key}=${JSON.stringify(value)}`)
-    .join(' ');
+const Template = (args) => `<my-component ${embedArgs(args)} ></my-component>`
 
-export const Template = () => {
-  const args: Components.MyComponent = {
-    first: 'first-value',
-    last: 'last',
-    middle: 'middle',
-  };
+// =========================================
+// stories
+// =========================================
 
-  return `<my-component ${embedArgs(args)} ></my-component>`;
-};
+export const Primary = Template.bind({});
+Primary.args = {
+  first: 'first',
+  last: 'last',
+  middle: 'middle',
+} as Components.MyComponent;
